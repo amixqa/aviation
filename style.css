@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e5e5e5;
+    color: #000;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* =========================
+        A4 СТРАНИЦА
+========================= */
+
+.page {
+    width: 210mm;
+    height: 297mm;
+
+    margin: 10mm auto;
+
+    padding: 14mm 16mm 13mm 18mm;
+
+    background: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+
+    page-break-after: always;
+}
+
+
+/* =========================
+        ТИТУЛЬНЫЙ ЛИСТ
+========================= */
+
+.title-page {
+    padding: 14mm;
+}
+
+.top {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 35mm;
+}
+
+.logo {
+    width: 35mm;
+    height: 35mm;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.institute {
+    width: calc(100% - 40mm);
+
+    margin-left: 5mm;
+
+    text-align: center;
+
+    font-size: 13pt;
+
+    font-weight: bold;
+
+    line-height: 1.35;
+}
+
+.title-content {
+    text-align: center;
+
+    margin-top: 24mm;
+}
+
+.title-content h1 {
+    margin: 0 0 9mm 0;
+
+    font-size: 39pt;
+
+    font-weight: bold;
+}
+
+.title-content h2 {
+    margin: 0 0 7mm 0;
+
+    font-size: 17pt;
+
+    line-height: 1.35;
+
+    font-weight: bold;
+}
+
+.title-content h3 {
+    margin: 0;
+
+    font-size: 19pt;
+
+    line-height: 1.4;
+
+    font-weight: bold;
+}
+
+.student-info {
+    position: absolute;
+
+    left: 28mm;
+    right: 14mm;
+
+    top: 166mm;
+
+    font-size: 16pt;
+
+    line-height: 1.7;
+}
+
+.student-info p {
+    margin: 0;
+}
+
+.student-info b {
+    font-weight: bold;
+}
+
+.city {
+    position: absolute;
+
+    bottom: 10mm;
+
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    font-size: 16pt;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+          ЗАГОЛОВКИ
+========================= */
+
+.page-title {
+    margin: 0 0 6mm 0;
+
+    text-align: center;
+
+    font-size: 19pt;
+
+    line-height: 1.25;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+        ОСНОВНОЙ ТЕКСТ
+========================= */
+
+.page p {
+    margin: 0 0 3.5mm 0;
+
+    text-align: justify;
+
+    text-indent: 8mm;
+
+    font-size: 15.5pt;
+
+    line-height: 1.28;
+}
+
+
+/* =========================
+          СОДЕРЖАНИЕ
+========================= */
+
+.contents {
+    margin-top: 9mm;
+}
+
+.contents p {
+    margin: 0 0 4.5mm 0;
+
+    text-align: left;
+
+    text-indent: 0;
+
+    font-size: 15.5pt;
+
+    line-height: 1.3;
+}
+
+
+/* =========================
+           ФОТО
+========================= */
+
+.content-image {
+    display: block;
+
+    width: 100%;
+
+    max-width: 150mm;
+
+    height: 45mm;
+
+    margin: 2mm auto 4mm auto;
+
+    object-fit: cover;
+
+    border: 1px solid #777;
+
+    padding: 1mm;
+
+    background: white;
+}
+
+.big-image {
+    max-width: 155mm;
+
+    height: 51mm;
+}
+
+.small-image {
+    width: 95mm;
+
+    height: 36mm;
+
+    margin: 2mm auto 4mm auto;
+}
+
+
+/* =========================
+        ЛИТЕРАТУРА
+========================= */
+
+.literature {
+    margin-top: 7mm;
+
+    padding-left: 10mm;
+
+    font-size: 15pt;
+
+    line-height: 1.3;
+}
+
+.literature li {
+    margin-bottom: 4mm;
+
+    padding-left: 2mm;
+
+    text-align: justify;
+}
+
+
+/* =========================
+          ПЕЧАТЬ A4
+========================= */
+
+@page {
+    size: A4;
+
+    margin: 0;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+
+        margin: 0;
+        padding: 0;
+
+        background: white;
+    }
+
+    .page {
+        width: 210mm;
+        height: 297mm;
+
+        margin: 0;
+
+        padding: 14mm 16mm 13mm 18mm;
+
+        box-shadow: none;
+
+        overflow: hidden;
+
+        page-break-after: always;
+    }
+
+    .title-page {
+        padding: 14mm;
+    }
+
+    .page:last-child {
+        page-break-after: auto;
+    }
+
+    img {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
